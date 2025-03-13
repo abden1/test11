@@ -1,0 +1,175 @@
+{
+  "info": {
+    "_postman_id": "f8a9d8c0-5b4b-4d7b-a7a9-8ce8f1c5e4a3",
+    "name": "Freelancer Management API",
+    "description": "API Collection for testing the Freelancer Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Freelancer Management",
+      "item": [
+        {
+          "name": "Register Freelancer",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"password123\",\n    \"specialization\": \"Web Development\",\n    \"yearsOfExperience\": 5,\n    \"hourlyRate\": 35.0\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "register"
+              ]
+            },
+            "description": "Register a new freelancer with the system"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Freelancer by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/freelancers/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "freelancers",
+                "1"
+              ]
+            },
+            "description": "Retrieve freelancer details by ID"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for managing freelancers"
+    },
+    {
+      "name": "Portfolio Management",
+      "item": [
+        {
+          "name": "Add Project",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"E-commerce Website\",\n    \"description\": \"Built a full-featured e-commerce website with product listings, shopping cart, and payment processing.\",\n    \"technologiesUsed\": [\"React\", \"Node.js\", \"MongoDB\", \"Express\", \"Stripe\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/portfolio/add?freelancerId=1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "portfolio",
+                "add"
+              ],
+              "query": [
+                {
+                  "key": "freelancerId",
+                  "value": "1"
+                }
+              ]
+            },
+            "description": "Add a new project to a freelancer's portfolio"
+          },
+          "response": []
+        },
+        {
+          "name": "Search Projects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/portfolio/search?query=React&page=0&size=10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "portfolio",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "React"
+                },
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Search for projects by title or technologies used"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Projects by Freelancer ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/portfolio/freelancer/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "portfolio",
+                "freelancer",
+                "1"
+              ]
+            },
+            "description": "Retrieve all projects for a specific freelancer"
+          },
+          "response": []
+        }
+      ],
+      "description": "Endpoints for managing project portfolios"
+    }
+  ]
+} 
