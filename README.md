@@ -167,10 +167,3 @@ The backend follows clean architecture principles:
 4. Image upload for user profiles and projects
 5. Reviews and ratings for freelancers
 
-## Author
-
-[Your Name]
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
